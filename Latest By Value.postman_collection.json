@@ -1,0 +1,93 @@
+{
+	"info": {
+		"_postman_id": "b60ae907-c86f-4c9f-a9d9-374cf68783a7",
+		"name": "Latest By Value",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14352809"
+	},
+	"item": [
+		{
+			"name": "get batch status",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/prices/batch/9ed4beb8-ea49-4869-93ff-57deaeb9e11f/status",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"prices",
+						"batch",
+						"9ed4beb8-ea49-4869-93ff-57deaeb9e11f",
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get latest price",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    \"MSFT\"\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/prices/latest",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"prices",
+						"latest"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Bulk Upload",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"prices\": [\n    {\"id\": \"AAPL\", \"asOf\": \"2024-01-01T09:30:00Z\", \"payload\": {\"price\": 150.25}},\n    {\"id\": \"MSFT\", \"asOf\": \"2024-01-01T09:30:00Z\", \"payload\": {\"price\": 310.55}},\n    {\"id\": \"GOOG\", \"asOf\": \"2024-01-01T09:30:00Z\", \"payload\": {\"price\": 2800.90}},\n    {\"id\": \"AAPL\", \"asOf\": \"2024-01-01T09:31:00Z\", \"payload\": {\"price\": 150.32}},\n    {\"id\": \"MSFT\", \"asOf\": \"2024-01-01T09:31:00Z\", \"payload\": {\"price\": 310.68}},\n    {\"id\": \"GOOG\", \"asOf\": \"2024-01-01T09:31:00Z\", \"payload\": {\"price\": 2801.15}},\n    {\"id\": \"AAPL\", \"asOf\": \"2024-01-01T09:32:00Z\", \"payload\": {\"price\": 150.41}},\n    {\"id\": \"TSLA\", \"asOf\": \"2024-01-01T09:32:00Z\", \"payload\": {\"price\": 250.75}},\n    {\"id\": \"MSFT\", \"asOf\": \"2024-01-01T09:32:00Z\", \"payload\": {\"price\": 310.72}},\n    {\"id\": \"GOOG\", \"asOf\": \"2024-01-01T09:32:00Z\", \"payload\": {\"price\": 2801.45}},\n    {\"id\": \"AAPL\", \"asOf\": \"2024-01-01T09:33:00Z\", \"payload\": {\"price\": 150.38}},\n    {\"id\": \"AMZN\", \"asOf\": \"2024-01-01T09:33:00Z\", \"payload\": {\"price\": 150.20}},\n    {\"id\": \"MSFT\", \"asOf\": \"2024-01-01T09:33:00Z\", \"payload\": {\"price\": 310.85}},\n    {\"id\": \"TSLA\", \"asOf\": \"2024-01-01T09:33:00Z\", \"payload\": {\"price\": 250.82}}\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/prices/upload",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"prices",
+						"upload"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
